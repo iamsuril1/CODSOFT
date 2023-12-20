@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3498db; /* Change background color */
+}
+
+.container {
+  position: relative;
+  max-width: 400px; /* Increase max-width for a bigger calculator */
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px; /* Adjust padding for a more spacious layout */
+  background: #08cafa; /* Change calculator background color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  height: 100px; /* Increase height for a taller display */
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 30px; /* Increase font size for better visibility */
+  color: #2c3e50;
+  pointer-events: none;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 15px; /* Increase grid-gap for more spacing between buttons */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons button {
+  padding: 15px; /* Increase padding for larger buttons */
+  border-radius: 8px;
+  border: 2px solid #2c3e50; /* Add border to buttons */
+  font-size: 24px; /* Adjust font size for button labels */
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+/* Grey color for AC, DEL, and % buttons */
+.buttons button[data-value="AC"],
+.buttons button[data-value="DEL"],
+.buttons button[data-value="%"] {
+  background-color: #bdc3c7;
+  color: #34495e; /* Darker text color for better visibility */
+}
+
+/* Darker color for numpad buttons */
+.buttons button[data-value="0"],
+.buttons button[data-value="00"],
+.buttons button[data-value="1"],
+.buttons button[data-value="2"],
+.buttons button[data-value="3"],
+.buttons button[data-value="4"],
+.buttons button[data-value="5"],
+.buttons button[data-value="6"],
+.buttons button[data-value="7"],
+.buttons button[data-value="8"],
+.buttons button[data-value="9"] {
+  background-color: #00c3d1e8; /* Darker color for numpad buttons */
+}
+
+.buttons button:not([data-value="0"]):not([data-value="1"]):not([data-value="2"]):not([data-value="3"]):not([data-value="4"]):not([data-value="5"]):not([data-value="6"]):not([data-value="7"]):not([data-value="8"]):not([data-value="9"]):not([data-value="00"]) {
+  background-color: #ffd700; /* Golden yellow color for non-number buttons */
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+.operator {
+  color: #3498db; /* Change operator color */
+}
